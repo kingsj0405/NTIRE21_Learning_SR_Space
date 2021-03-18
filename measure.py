@@ -114,14 +114,14 @@ for img_idx in range(100):
     if n_samples > 1:
         srs_imgs.append([])
         for i in range(n_samples):
-            sr = os.path.join(srs_dir, f'{img_idx:06d}_sample{i:05d}.png')
+            sr = os.path.join(srs_dir, f'0{801 + img_idx:03d}_sample{i:02d}.png')
             if sr in srs_imgs_raw:
                 srs_imgs[-1].append(sr)
             else:
                 raise RuntimeError("Not Found: ", sr)
     else:
         srs_imgs.append([])
-        sr = os.path.join(srs_dir, f'{img_idx:06d}.png')
+        sr = os.path.join(srs_dir, f'0{801 + img_idx:03d}.png')
         if sr in srs_imgs_raw:
             srs_imgs[-1].append(sr)
         else:
